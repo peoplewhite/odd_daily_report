@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  role                   :integer
+#  username               :string
 #
 
 require 'rails_helper'
