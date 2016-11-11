@@ -26,6 +26,6 @@ RSpec.describe User, type: :model do
     it { should have_many(:problems) }
     it { should have_many(:comments) }
     it { should have_many(:diaries) }
-    it { should have_many(:Images) }
+    it { should have_many(:images) }
   end
 end

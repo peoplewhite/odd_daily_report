@@ -15,4 +15,5 @@
 class Task < ApplicationRecord
   belongs_to :diary
   belongs_to :project
+  has_many :images, as: :imagable
 end

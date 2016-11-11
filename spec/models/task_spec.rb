@@ -19,7 +19,7 @@ RSpec.describe Task, type: :model do
   describe 'associations' do
     it { should belong_to(:diary) }
     it { should belong_to(:project) }
-    it { should have_many(:Images) }
+    it { should have_many(:images) }
   end
 
 end
