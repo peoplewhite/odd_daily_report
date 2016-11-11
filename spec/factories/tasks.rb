@@ -8,6 +8,7 @@
 #  is_checked  :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  diary_id    :integer
 #
 
 FactoryGirl.define do

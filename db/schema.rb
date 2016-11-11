@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111105948) do
+ActiveRecord::Schema.define(version: 20161111123221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20161111105948) do
     t.boolean  "is_checked"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "diary_id"
+    t.index ["diary_id"], name: "index_tasks_on_diary_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,4 +81,5 @@ ActiveRecord::Schema.define(version: 20161111105948) do
   add_foreign_key "comments", "users"
   add_foreign_key "diaries", "users"
   add_foreign_key "problems", "diaries"
+  add_foreign_key "tasks", "diaries"
 end

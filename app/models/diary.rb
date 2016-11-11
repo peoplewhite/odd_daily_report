@@ -12,4 +12,5 @@
 class Diary < ApplicationRecord
   belongs_to :user
   has_many :problems
+  has_many :tasks
 end

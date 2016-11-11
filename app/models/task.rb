@@ -8,7 +8,9 @@
 #  is_checked  :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  diary_id    :integer
 #
 
 class Task < ApplicationRecord
+  belongs_to :diary
 end
