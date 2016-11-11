@@ -7,9 +7,10 @@
 #  user_id     :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  diary_id    :integer
 #
 
 class Problem < ApplicationRecord
-  has_many :comments
+  has_many :comments, as: :commentable
   belongs_to :diary
 end
