@@ -14,7 +14,6 @@ FactoryGirl.define do
   factory :task do
     title "MyString"
     description "MyString"
-    is_check false
-    user_id "MyString"
+    is_checked false
   end
 end
