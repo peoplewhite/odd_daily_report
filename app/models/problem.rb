@@ -4,7 +4,6 @@
 #
 #  id          :integer          not null, primary key
 #  description :string
-#  user_id     :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  diary_id    :integer
@@ -13,4 +12,5 @@
 class Problem < ApplicationRecord
   has_many :comments, as: :commentable
   belongs_to :diary
+  belongs_to :user
 end
