@@ -9,6 +9,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  diary_id    :integer
+#  project_id  :integer
 #
 
 require 'rails_helper'

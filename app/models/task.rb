@@ -9,8 +9,10 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  diary_id    :integer
+#  project_id  :integer
 #
 
 class Task < ApplicationRecord
   belongs_to :diary
+  belongs_to :project
 end
