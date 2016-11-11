@@ -7,11 +7,11 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  diary_id    :integer
+#  user_id     :integer
 #
 
 FactoryGirl.define do
   factory :problem do
     description "MyString"
-    user_id "MyString"
   end
 end

@@ -7,6 +7,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  diary_id    :integer
+#  user_id     :integer
 #
 
 require 'rails_helper'
