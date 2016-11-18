@@ -28,6 +28,6 @@ class User < ApplicationRecord
   has_many :comments
   has_many :diaries
   has_many :problems
-  has_many :images, as: :imagable
+  has_many :images, as: :imageable
 
 end
