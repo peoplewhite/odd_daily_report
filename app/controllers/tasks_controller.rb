@@ -13,6 +13,13 @@ class TasksController < ApplicationController
   end
 
   def create
+    @task = Task.create(task_params)
+
+    if @task.save
+      redirect_to :tasks
+    else
+      render :new
+    end
 
   end
 
