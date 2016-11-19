@@ -24,11 +24,23 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
 
   end
 
   def destroy
 
+  end
+
+  private
+  
+  def task_params
+    params.required(:task).permit(:title, :description)
   end
 
 end
