@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'prototype#index'
 
   resources :tasks
-  get 'diary' => 'diaries#index'
+  resources :diaries
+
 end
