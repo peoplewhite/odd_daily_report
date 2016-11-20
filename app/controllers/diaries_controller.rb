@@ -12,6 +12,12 @@ class DiariesController < ApplicationController
   end
 
   def create
+    @diary = Diary.create(diary_params)
+    if @diary.save
+      redirect_to :diaries
+    else
+      render :new
+    end
 
   end
 
@@ -20,6 +26,13 @@ class DiariesController < ApplicationController
   end
 
   def destroy
+
+  end
+
+  private
+
+  def diary_params
+    params.required(:diary).permit(:description)
 
   end
 
