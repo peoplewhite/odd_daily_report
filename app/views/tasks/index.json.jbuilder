@@ -1,6 +1,6 @@
 #json.extract! @tasks, :title, :description
 
-json.custom_tasks @tasks do |task|
-  json.custom_title task.title
-  json.custom_content task.description
+json.all_tasks @tasks do |task|
+  json.title task.title
+  json.content task.description
 end
