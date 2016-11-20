@@ -1,0 +1,29 @@
+<h1>odd daily report</h1>
+
+<div class="create-task-button-wrapper">
+  <%= link_to '建立新日誌', new_diary_path, class: 'create-button' %>
+</div>
+
+<section class="task-wrapper">
+  <div class="section-title">列表</div>
+  <div class="task-list-wrapper">
+    <ul>
+      <% @diaries.each do |diary|%>
+        <li class"restaurant-unit">
+          <span class="address"><%= diary.description %></span>
+          <span class="divider">|</span>
+
+          <%= link_to 'edit',
+                      edit_diary_path(diary),
+                      class: 'edit-button' %>
+
+          <%= link_to 'delete',
+                      diary_path(diary),
+                      method: :delete,
+                      class: 'delete-button' %>
+
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
