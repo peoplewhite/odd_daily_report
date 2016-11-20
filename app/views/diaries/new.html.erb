@@ -1,0 +1,18 @@
+<header>
+<h1>建立新日誌</h1>
+</header>
+
+Today: <% Date.today.to_s %>
+
+<div class="create-diary-wrapper">
+  <%= form_for @diary do |f| %>
+    <div class="description-textfield">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+    <div class="submit-button">
+      <%= f.submit "確定新增" %>
+    </div>
+  <% end %>
+</div>
+
