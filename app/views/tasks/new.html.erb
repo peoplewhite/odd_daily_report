@@ -4,7 +4,7 @@
 
 
 <div class="create-restaurant-wrapper">
-  <%= form_for @task do |f| %>
+  <%= form_for [@diary, @task] do |f| %>
     <div class="name-textfield">
       <span><%= f.label :title %></span>
       <span><%= f.text_field :title %></span>

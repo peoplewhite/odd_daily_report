@@ -5,7 +5,8 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @diary = Diary.find(params[:diary_id])
+    @task = @diary.tasks.new
   end
 
   def edit
@@ -13,10 +14,11 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(task_params)
+    @diary = Diary.find(params[:diary_id])
+    @task = @diary.tasks.new(task_params)
 
     if @task.save
-      redirect_to :tasks
+      redirect_to diary_path(@diary)
     else
       render :new
     end
@@ -42,7 +44,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.required(:task).permit(:title, :description)
+    params.required(:task).permit(:title, :description, :diary_id)
   end
 
 end

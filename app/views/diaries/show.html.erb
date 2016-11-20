@@ -1,6 +1,7 @@
 <div class="col-md-12">
   <p><%= @diary.description %></p>
   <p><%= @diary.created_at %></p>
+  <p><%= link_to '新增代辦事項', new_diary_task_path(@diary)%></p>
 
   <table class="table">
     <thead>
@@ -15,7 +16,7 @@
         <tr>
           <td>title = <%= task.title %></td>
           <td>description = <%= task.description %></td>
-          <td><%= link_to 'Delete', task_path(task), method: :delete %></td>
+          <td><%# link_to 'Delete', task_path(task), method: :delete %></td>
         </tr>
       <% end %>
 
