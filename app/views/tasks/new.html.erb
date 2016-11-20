@@ -1,0 +1,20 @@
+<header>
+  <h1>建立新代辦事項</h1>
+</header>
+
+
+<div class="create-restaurant-wrapper">
+  <%= form_for @task do |f| %>
+    <div class="name-textfield">
+      <span><%= f.label :title %></span>
+      <span><%= f.text_field :title %></span>
+    </div>
+    <div class="address-textfield">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+    <div class="submit-button">
+      <%= f.submit "確定新增" %>
+    </div>
+  <% end %>
+</div>
