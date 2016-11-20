@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'prototype#index'
 
-  resources :tasks
-  resources :diaries
+  resources :diaries do
+    resources :tasks
+  end
 
 end
