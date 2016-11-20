@@ -15,11 +15,11 @@ class TasksController < ApplicationController
   def create
     @task = Task.create(task_params)
 
-    # if @task.save
-    #   redirect_to :tasks
-    # else
-    #   render :new
-    # end
+    if @task.save
+      redirect_to :tasks
+    else
+      render :new
+    end
 
   end
 
