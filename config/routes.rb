@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'prototype#index'
 
   resources :diaries do
+    #resources :tasks, only: %i(new edit destroy)
     resources :tasks
   end
 

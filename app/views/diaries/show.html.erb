@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <p><%= @diary.description %></p>
+  <p><%= @diary.created_at %></p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>代辦事項</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @tasks.each do |task| %>
+        <tr>
+          <td>title = <%= task.title %></td>
+          <td>description = <%= task.description %></td>
+          <td><%= link_to 'Delete', diary_task_path(@diary, task), method: :delete %></td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
