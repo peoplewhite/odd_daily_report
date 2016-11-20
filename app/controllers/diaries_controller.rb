@@ -8,7 +8,7 @@ class DiariesController < ApplicationController
   end
 
   def edit
-
+    @diary = Diary.find(params[:id])
   end
 
   def create
@@ -22,7 +22,12 @@ class DiariesController < ApplicationController
   end
 
   def update
-
+    @diary = Diary.find(params[:id])
+    if @diary.update(diary_params)
+      redirect_to :diaries
+    else
+      render :edit
+    end
   end
 
   def destroy
