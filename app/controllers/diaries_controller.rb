@@ -31,7 +31,9 @@ class DiariesController < ApplicationController
   end
 
   def destroy
-
+    @diary = Diary.find(params[:id])
+    @diary.destroy
+    redirect_to :diaries
   end
 
   private
