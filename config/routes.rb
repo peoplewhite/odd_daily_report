@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   resources :tasks do
     member do
       put 'check'
-      put 'uncheck'
     end
   end
 
-end
+
+    #namespace :admin do
+    # resources :tasks
+    #resources :diaries
+    #end
+
+  end
