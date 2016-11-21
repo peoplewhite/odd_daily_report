@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   resources :diaries do
     resources :tasks, controller: 'diaries/tasks'
   end
-  # resources :tasks
+
+  resources :tasks do
+    member do
+      put 'check'
+      put 'uncheck'
+    end
+  end
 
 end

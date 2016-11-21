@@ -16,6 +16,8 @@
         <tr>
           <td>title = <%= task.title %></td>
           <td>description = <%= task.description %></td>
+          <td>checked = <%= task.is_checked.to_s %></td>
+          <td><%= link_to 'check', check_task_path(task), method: :put %></td>
           <td><%= link_to 'Delete', diary_task_path(@diary, task), method: :delete %></td>
         </tr>
       <% end %>
