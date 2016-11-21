@@ -12,16 +12,11 @@
         <li class"restaurant-unit">
           <span class="address"><%= diary.description %></span>
           <span class="divider">|</span>
-
-          <%= link_to 'edit',
-                      edit_diary_path(diary),
-                      class: 'edit-button' %>
-
-          <%= link_to 'delete',
-                      diary_path(diary),
-                      method: :delete,
-                      class: 'delete-button' %>
-
+          <%= link_to 'enter', diary_path(diary) %>
+          <span class="divider">|</span>
+          <%= link_to 'edit', edit_diary_path(diary), class: 'edit-button' %>
+          <span class="divider">|</span>
+          <%= link_to 'delete', diary_path(diary), method: :delete, class: 'delete-button' %>
         </li>
       <% end %>
     </ul>
