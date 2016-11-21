@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'prototype#index'
 
   resources :diaries do
-    resources :tasks
+    resources :tasks, controller: 'diaries/tasks'
   end
   # resources :tasks
 

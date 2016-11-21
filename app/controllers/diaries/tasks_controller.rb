@@ -1,6 +1,6 @@
-class TasksController < ApplicationController
-
+class Diaries::TasksController < ApplicationController
   def index
+    @diary = Diary.find(params[:diary_id])
     @tasks = Task.all
   end
 
@@ -46,5 +46,4 @@ class TasksController < ApplicationController
   def task_params
     params.required(:task).permit(:title, :description, :diary_id)
   end
-
 end
