@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118074901) do
+ActiveRecord::Schema.define(version: 20161121091156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 20161118074901) do
   create_table "tasks", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.boolean  "is_checked"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_checked",  default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "diary_id"
     t.integer  "project_id"
     t.index ["diary_id"], name: "index_tasks_on_diary_id", using: :btree

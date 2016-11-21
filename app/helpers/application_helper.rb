@@ -7,4 +7,12 @@ module ApplicationHelper
 
     image_tag "http://placehold.it/#{width}x#{height}&text=#{text}", :class => "#{classes}"
   end
+
+  def render_check_task_btn(task)
+    if task.done?
+      link_to 'check', check_task_path(task), method: :put
+    else
+      link_to 'uncheck', check_task_path(task), method: :put
+    end
+  end
 end
