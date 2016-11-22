@@ -28,7 +28,7 @@ class Diaries::TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to root_path
+      redirect_to :back
     else
       render :edit
     end

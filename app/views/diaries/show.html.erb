@@ -18,6 +18,7 @@
           <td>description = <%= task.description %></td>
           <td>checked = <%= task.is_checked.to_s %></td>
           <td><%= render_check_task_btn(task) %></td>
+          <td><%= link_to 'Edit', edit_task_path(task) %></td>
           <td><%= link_to 'Delete', diary_task_path(@diary, task), method: :delete %></td>
         </tr>
       <% end %>
