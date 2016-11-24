@@ -5,7 +5,7 @@ class DiariesController < ApplicationController
 
   def show
     @diary = Diary.find(params[:id])
-    @tasks = @diary.tasks
+    @tasks = @diary.tasks.recent
 
   end
 

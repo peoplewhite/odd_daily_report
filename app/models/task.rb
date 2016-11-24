@@ -17,6 +17,8 @@ class Task < ApplicationRecord
   belongs_to :project
   has_many :images, as: :imageable
 
+  scope :recent, -> { order(created_at: :desc) }
+
   def toggle_check_status
     current_status = is_checked
 

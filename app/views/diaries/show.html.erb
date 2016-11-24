@@ -4,19 +4,13 @@
       <h1><%= @diary.description %></h1>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <span><%= @diary.created_at %> </span>
-      </div>
+    <div class="col-md-12">
+      <span><%= @diary.created_at.to_date %> </span>
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <%= link_to '新增代辦事項', new_diary_task_path(@diary), class: "btn btn-primary"%>
-      </div>
+ 
+    <div class="col-md-12">
+      <%= link_to '新增代辦事項', new_diary_task_path(@diary), class: "btn btn-primary"%>
     </div>
-
-
   </div>
 
   <div class="row">
