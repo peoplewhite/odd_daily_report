@@ -19,6 +19,7 @@
             <%= f.text_field :description%>
           </div>
           <div class="submit-button">
+            <%= link_to '取消', diaries_path(@diary), class: "btn btn-primary" %>
             <%= f.submit "確定新增"%>
           </div>
         <% end%>
