@@ -10,6 +10,7 @@ class Diaries::TasksController < ApplicationController
   end
 
   def edit
+    @diary = Diary.find(params[:diary_id])
     @task = Task.find(params[:id])
   end
 
