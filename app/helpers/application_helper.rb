@@ -10,9 +10,9 @@ module ApplicationHelper
 
   def render_check_task_btn(task)
     if task.done?
-      link_to 'check', check_task_path(task), method: :put, class: 'btn btn-primary'
-    else
       link_to 'uncheck', check_task_path(task), method: :put, class: 'btn btn-primary'
+    else
+      link_to 'check', check_task_path(task), method: :put, class: 'btn btn-primary'
     end
   end
 end
