@@ -1,18 +1,28 @@
-<header>
-<h1>建立新日誌</h1>
-</header>
-
-Today: <%= Date.current.to_s %>
-
-<div class="create-diary-wrapper">
-  <%= form_for @diary do |f| %>
-    <div class="description-textfield">
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>建立新日誌</h1>
     </div>
-    <div class="submit-button">
-      <%= f.submit "確定新增" %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4> Today: <%= Date.current.to_s %> </h4>
     </div>
-  <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="create-diary-wrapper">
+        <%= form_for @diary do |f|%>
+          <div class="description-textfield">
+            <%= f.label :description%>
+            <%= f.text_field :description%>
+          </div>
+          <div class="submit-button">
+            <%= f.submit "確定新增"%>
+          </div>
+        <% end%>
+      </div>
+    </div>
+  </div>
 </div>
-
