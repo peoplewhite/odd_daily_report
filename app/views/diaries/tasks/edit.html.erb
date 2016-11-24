@@ -1,21 +1,23 @@
-<header>
-<h1>編輯代辦事項</h1>
-</header>
+<div class="container">
 
-<div class="edit-restaurant-wrapper">
-  <%= form_for @task do |f| %>
-    <div class="name-textfield">
-      <span><%= f.label :title %></span>
-      <span><%= f.text_field :title %></span>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>編輯代辦事項</h1>
     </div>
-    <div class="address-textfield">
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for [@diary, @task] do |f| %>
+        <span><%= f.label :title %></span>
+        <span><%= f.text_field :title %></span>
+        <span><%= f.label :description %></span>
+        <span><%= f.text_field :description %></span>
+        <div class="submit-button">
+          <%= f.submit "確認修改" %>
+        </div>
+      <% end %>
     </div>
-    <div class="submit-button">
-      <%= f.submit "確認修改" %>
-    </div>
-  <% end %>
+  </div>
+
 </div>
-
-

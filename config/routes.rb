@@ -10,9 +10,5 @@ Rails.application.routes.draw do
       put 'check'
     end
   end
-    resources :tasks
-    #namespace :admin do
-    # resources :tasks
-    #resources :diaries
-    #end
-  end
+
+end

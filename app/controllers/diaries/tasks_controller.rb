@@ -1,4 +1,5 @@
 class Diaries::TasksController < ApplicationController
+
   def index
     @diary = Diary.find(params[:diary_id])
     @tasks = Task.all
@@ -9,10 +10,6 @@ class Diaries::TasksController < ApplicationController
     @task = @diary.tasks.new
   end
 
-  def edit
-    @diary = Diary.find(params[:diary_id])
-    @task = Task.find(params[:id])
-  end
 
   def create
     @diary = Diary.find(params[:diary_id])
@@ -26,10 +23,16 @@ class Diaries::TasksController < ApplicationController
 
   end
 
+  def edit
+    @diary = Diary.find(params[:diary_id])
+    @task = Task.find(params[:id])
+  end
+
   def update
+    @diary = Diary.find(params[:diary_id])
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to :back
+      redirect_to diary_path(@diary)
     else
       render :edit
     end
