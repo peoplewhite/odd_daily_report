@@ -13,24 +13,34 @@
     </div>
   </div>
 
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+
+        <thead>
+          <td>title</td>
+          <td>date</td>
+          <td></td>
+          <td></td>
+        </thead>
+
+        <tbody>
+          <% @diaries.each do |diary|%>
+            <tr>
+              <td><%= diary.description %></td>
+              <td><%= diary.created_at %></td>
+              <td class="text-center"><%= link_to 'Enter', diary_path(diary), class: 'btn btn-primary' %></td>
+              <td class="text-center"><%= link_to 'Edit', edit_diary_path(diary), class: 'btn btn-primary' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+
+      </table>
+    </div>
+  </div>
+
 </div>
 
 
-<section class="task-wrapper">
-<div class="section-title">列表</div>
-<div class="task-list-wrapper">
-  <ul>
-    <% @diaries.each do |diary|%>
-      <li class"restaurant-unit">
-      <span class="address"><%= diary.description %></span>
-      <span class="divider">|</span>
-      <%= link_to 'enter', diary_path(diary) %>
-      <span class="divider">|</span>
-      <%= link_to 'edit', edit_diary_path(diary), class: 'edit-button' %>
-      <span class="divider">|</span>
-      <%= link_to 'delete', diary_path(diary), method: :delete, class: 'delete-button' %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-</section>
