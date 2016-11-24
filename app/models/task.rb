@@ -29,4 +29,9 @@ class Task < ApplicationRecord
     is_checked
   end
 
+  def show_status
+   return "已完成" if is_checked
+   "未完成"
+  end
+
 end
