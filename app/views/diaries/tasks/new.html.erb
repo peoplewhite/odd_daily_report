@@ -1,9 +1,10 @@
 <header>
-<h1>編輯代辦事項</h1>
+  <h1>建立新代辦事項</h1>
 </header>
 
-<div class="edit-task-wrapper">
-  <%= form_for @task do |f| %>
+
+<div class="create-restaurant-wrapper">
+  <%= form_for [@diary, @task] do |f| %>
     <div class="name-textfield">
       <span><%= f.label :title %></span>
       <span><%= f.text_field :title %></span>
@@ -13,9 +14,7 @@
       <%= f.text_field :description %>
     </div>
     <div class="submit-button">
-      <%= f.submit "確認修改" %>
+      <%= f.submit "確定新增" %>
     </div>
   <% end %>
 </div>
-
-

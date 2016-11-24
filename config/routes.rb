@@ -2,7 +2,17 @@ Rails.application.routes.draw do
   devise_for :users
   root 'prototype#index'
 
-  resources :tasks
-  resources :diaries
-
-end
+  resources :diaries do
+    resources :tasks, controller: 'diaries/tasks'
+  end
+  resources :tasks do
+    member do
+      put 'check'
+    end
+  end
+    resources :tasks
+    #namespace :admin do
+    # resources :tasks
+    #resources :diaries
+    #end
+  end

@@ -2,7 +2,7 @@
 <h1>建立新日誌</h1>
 </header>
 
-Today: <% Date.today.to_s %>
+Today: <% Date.current.to_s %>
 
 <div class="create-diary-wrapper">
   <%= form_for @diary do |f| %>
