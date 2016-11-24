@@ -1,24 +1,36 @@
-<h1>odd daily report</h1>
 
-<div class="create-task-button-wrapper">
-  <%= link_to '建立新日誌', new_diary_path, class: 'create-button' %>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>odd daily report</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to '建立新日誌', new_diary_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
 </div>
 
+
 <section class="task-wrapper">
-  <div class="section-title">列表</div>
-  <div class="task-list-wrapper">
-    <ul>
-      <% @diaries.each do |diary|%>
-        <li class"restaurant-unit">
-          <span class="address"><%= diary.description %></span>
-          <span class="divider">|</span>
-          <%= link_to 'enter', diary_path(diary) %>
-          <span class="divider">|</span>
-          <%= link_to 'edit', edit_diary_path(diary), class: 'edit-button' %>
-          <span class="divider">|</span>
-          <%= link_to 'delete', diary_path(diary), method: :delete, class: 'delete-button' %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+<div class="section-title">列表</div>
+<div class="task-list-wrapper">
+  <ul>
+    <% @diaries.each do |diary|%>
+      <li class"restaurant-unit">
+      <span class="address"><%= diary.description %></span>
+      <span class="divider">|</span>
+      <%= link_to 'enter', diary_path(diary) %>
+      <span class="divider">|</span>
+      <%= link_to 'edit', edit_diary_path(diary), class: 'edit-button' %>
+      <span class="divider">|</span>
+      <%= link_to 'delete', diary_path(diary), method: :delete, class: 'delete-button' %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 </section>
