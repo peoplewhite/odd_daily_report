@@ -29,7 +29,7 @@
           <% @diaries.each do |diary|%>
             <tr>
               <td><%= diary.description %></td>
-              <td><%= diary.created_at %></td>
+              <td><%= diary.created_at.to_date %></td>
               <td class="text-center"><%= link_to 'Enter', diary_path(diary), class: 'btn btn-primary' %></td>
               <td class="text-center"><%= link_to 'Edit', edit_diary_path(diary), class: 'btn btn-primary' %></td>
             </tr>
