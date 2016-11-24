@@ -15,6 +15,24 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
+  describe '#show_status' do
+    context 'if a task is unchecked' do
+      it 'should show 未完成' do
+        task = create :task
+        message = task.show_status
+        expect(message).to eq "未完成"
+      end
+    end
+    context 'if a task is checked' do
+      it 'should show 已完成' do
+        task = create :task
+        task.is_checked = true
+        message = task.show_status
+        expect(message).to eq "已完成"
+      end
+    end
+  end
+
   describe '#done?' do
     context 'if a task is not done yet' do
       it "should return false" do

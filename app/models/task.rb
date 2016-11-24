@@ -28,4 +28,5 @@ class Task < ApplicationRecord
   def done?
     is_checked
   end
+
 end
