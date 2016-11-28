@@ -19,7 +19,7 @@ class DiariesController < ApplicationController
   def create
     @diary = Diary.create(diary_params)
     if @diary.save
-      redirect_to :diaries, notice: "Create Success"
+      redirect_to :diaries, notice: "Diary be Created Success"
     else
       render :new
     end
@@ -29,7 +29,7 @@ class DiariesController < ApplicationController
   def update
     @diary = Diary.find(params[:id])
     if @diary.update(diary_params)
-      redirect_to :diaries, notice: "Update Success"
+      redirect_to :diaries, notice: "Diary be Updated Success"
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class DiariesController < ApplicationController
   def destroy
     @diary = Diary.find(params[:id])
     @diary.destroy
-    redirect_to :diaries, notice: "Delete Success"
+    redirect_to :diaries, notice: "Diary be Deleted Success"
   end
 
   private
