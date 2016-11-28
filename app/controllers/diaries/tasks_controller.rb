@@ -25,12 +25,12 @@ class Diaries::TasksController < ApplicationController
 
   def edit
     @diary = Diary.find(params[:diary_id])
-    @task = Task.find(params[:id])
+    @task = @diary.tasks.find(params[:id])
   end
 
   def update
     @diary = Diary.find(params[:diary_id])
-    @task = Task.find(params[:id])
+    @task = @diary.tasks.find(params[:id])
     if @task.update(task_params)
       redirect_to diary_path(@diary), notice: "Task be Updated Success"
 
@@ -42,7 +42,7 @@ class Diaries::TasksController < ApplicationController
 
   def destroy
     @diary = Diary.find(params[:diary_id])
-    @task = Task.find(params[:id])
+    @task = @diary.tasks.find(params[:id])
     @task.destroy
     redirect_to diary_path(@diary), notice: "Task be Deleted Success"
   end
